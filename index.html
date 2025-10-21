@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Collection | Premium Digital Showroom</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables for Theme */
+        :root {
+            --primary: #0a0a0a;
+            --secondary: #1a1a1a;
+            --accent: #c9a96e;
+            --accent-light: #d4b887;
+            --text: #f5f5f5;
+            --text-secondary: #b0b0b0;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --card-hover: rgba(255, 255, 255, 0.08);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            --shadow-light: 0 5px 15px rgba(0, 0, 0, 0.2);
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+            --section-spacing: 5rem;
+        }
+
+        /* Light Theme Variables */
+        .light-theme {
+            --primary: #f8f9fa;
+            --secondary: #ffffff;
+            --text: #1a1a1a;
+            --text-secondary: #5a5a5a;
+            --card-bg: rgba(0, 0, 0, 0.03);
+            --card-hover: rgba(0, 0, 0, 0.06);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --shadow-light: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary);
+            color: var(--text);
+            line-height: 1.6;
+            transition: var(--transition);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            padding: var(--section-spacing) 0;
+        }
+
+        /* Header & Navigation */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--secondary);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+        }
+
+        .light-theme .header {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--accent);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 8rem;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.9rem 2rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-light);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-light);
+        }
+
+        .btn-secondary {
+            background-color: var(--card-bg);
+            color: var(--text);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .light-theme .btn-secondary {
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--card-hover);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-light);
+        }
+
+        /* Categories Section */
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .category-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: var(--shadow-light);
+        }
+
+        .light-theme .category-card {
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+            border-color: var(--accent);
+        }
+
+        .category-img {
+            height: 180px;
+            width: 100%;
+            object-fit: cover;
+            background-color: var(--secondary);
+        }
+
+        .category-content {
+            padding: 1.5rem;
+        }
+
+        .category-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .category-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .category-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            transition: var(--transition);
+        }
+
+        .category-link:hover {
+            gap: 0.5rem;
+        }
+
+        .view-more-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .modal-content {
+            background-color: var(--secondary);
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            max-width: 700px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .close-modal:hover {
+            color: var(--accent);
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+
+        .modal-subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--text);
+        }
+
+        .steps-list {
+            margin-bottom: 2rem;
+        }
+
+        .step {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+        }
+
+        .step-number {
+            background-color: var(--accent);
+            color: var(--primary);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+
+        .payment-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .payment-method {
+            background-color: var(--card-bg);
+            padding: 0.8rem;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Highlights Section */
+        .highlights {
+            background-color: var(--secondary);
+            border-radius: var(--border-radius);
+            padding: 3rem;
+            margin-top: 3rem;
+        }
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .highlight-card {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .highlight-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .highlight-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Brand Story Section */
+        .brand-story {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .story-content h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .story-content p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .story-image {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .story-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Newsletter Section */
+        .newsletter {
+            background-color: var(--secondary);
+            border-radius: var(--border-radius);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .newsletter h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .newsletter p {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            gap: 0.5rem;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 0.9rem 1.2rem;
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: var(--card-bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .light-theme .newsletter-input {
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .newsletter-input:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--secondary);
+            padding: 3rem 0 1.5rem;
+            margin-top: var(--section-spacing);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--card-bg);
+            color: var(--text);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .light-theme .footer-bottom {
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .dubai-note {
+            background-color: var(--accent);
+            color: var(--primary);
+            padding: 0.8rem 1.2rem;
+            border-radius: var(--border-radius);
+            margin-top: 1rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        /* Sticky Contact Bar */
+        .contact-bar {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .contact-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1.3rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .contact-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .contact-btn.whatsapp {
+            background-color: #25D366;
+        }
+
+        .contact-btn.instagram {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+        }
+
+        .contact-btn.email {
+            background-color: #EA4335;
+        }
+
+        .contact-tooltip {
+            position: absolute;
+            right: 60px;
+            background-color: var(--secondary);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            font-size: 0.9rem;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition);
+            box-shadow: var(--shadow-light);
+        }
+
+        .contact-btn:hover .contact-tooltip {
+            opacity: 1;
+            right: 65px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .brand-story {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .story-content h2 {
+                font-size: 2rem;
+            }
+            
+            .hero-title {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .contact-bar {
+                bottom: 1rem;
+                right: 1rem;
+            }
+            
+            .modal-content {
+                padding: 1.5rem;
+            }
+            
+            .payment-methods {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                padding-top: 6rem;
+            }
+            
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .highlights {
+                padding: 2rem 1.5rem;
+            }
+            
+            .highlights-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+        .delay-5 { animation-delay: 0.5s; }
+        
+        /* Hidden categories */
+        .hidden-category {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="#" class="logo">
+                    <i class="fas fa-gem"></i> Luxury<span>Collection</span>
+                </a>
+                <div class="nav-links">
+                    <a href="#categories" class="nav-link">Categories</a>
+                    <a href="#story" class="nav-link">Our Story</a>
+                    <a href="#highlights" class="nav-link">Highlights</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1 class="hero-title">Premium Accessories for the Discerning Individual</h1>
+                <p class="hero-subtitle">Discover our curated collection of luxury watches, designer bags, exquisite jewelry, and more. Each piece tells a story of craftsmanship and elegance.</p>
+                <div class="cta-buttons">
+                    <a href="#categories" class="btn btn-primary">
+                        <i class="fas fa-shopping-bag"></i> Explore Collection
+                    </a>
+                    <a href="#story" class="btn btn-secondary">
+                        <i class="fas fa-play-circle"></i> Our Story
+                    </a>
+                    <button class="btn btn-secondary" id="howToOrderBtn">
+                        <i class="fas fa-question-circle"></i> How to Order
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="categories">
+        <div class="container">
+            <h2 class="section-title fade-in">Our Collections</h2>
+            <div class="categories-grid">
+                <!-- First 3 visible categories -->
+                <div class="category-card fade-in delay-1">
+                    <div class="category-img" style="background: linear-gradient(45deg, #1a1a1a, #2d2d2d); display: flex; align-items: center; justify-content: center;">
+                        <img src="https://drive.google.com/uc?export=view&id=1b6RPO3Yb8yf77roCnBi-yaaI6izmMvGN" alt="New Inventory" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="category-content">
+                        <h3 class="category-title">New Inventory 2025</h3>
+                        <p class="category-desc">Fresh arrivals and latest collections for 2025.</p>
+                        <a href="https://drive.google.com/drive/folders/1b6RPO3Yb8yf77roCnBi-yaaI6izmMvGN?usp=drive_link" class="category-link" target="_blank">
+                            View Collection <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="category-card fade-in delay-2">
+                    <div class="category-img" style="background: linear-gradient(45deg, #1a1a1a, #2d2d2d); display: flex; align-items: center; justify-content: center;">
+                        <img src="https://drive.google.com/uc?export=view&id=1BYGZ3eSeyv2T6EPnX87U6fViG9_iVMjz" alt="Designer Bags" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="category-content">
+                        <h3 class="category-title">Designer Bags</h3>
+                        <p class="category-desc">Premium handbags and accessories from luxury fashion houses.</p>
+                        <a href="https://drive.google.com/drive/folders/1T2SuGpddbDJsKtnCY5yjZ5hhw1KIOTsX?usp=drive_link" class="category-link" target="_blank">
+                            View Collection <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="category-card fade-in delay-3">
+                    <div class="category-img" style="background: linear-gradient(45deg, #1a1a1a, #2d2d2d); display: flex; align-items: center; justify-content: center;">
+                        <img src="https://drive.google.com/uc?export=view&id=1yxQKpPrh0EFlR-7hYBXr9yxZRWOSTgnK" alt="Watches" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="category-content">
+                        <h3 class="category-title">Watches</h3>
+                        <p class="category-desc">Luxury timepieces from leading Swiss and European brands.</p>
+                        <a href="https://drive.google.com/drive/folders/1tC_qoxehVztvTAgePvDwxR22HXC01PxR?usp=drive_link" class="category-link" target="_blank">
+                            View Collection <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hidden categories -->
+                <div class="category-card hidden-category">
+                    <div class="category-img" style="background: linear-gradient(45deg, #1a1a1a, #2d2d2d); display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-star" style="font-size: 3rem; color: #c9a96e;"></i>
+                    </div>
+                    <div class="category-content">
+                        <h3 class="category-title">Highlights</h3>
+                        <p class="category-desc">Featured products and special offers.</p>
+                        <a href="https://drive.google.com/drive/folders/1l3y4EEM6mp7KbH6ogRBH56lAFxtzRYNh?usp=drive_link" class="category-link" target="_blank">
+                            View Collection <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="category-card hidden-category">
+                    <div class="category-img" style="background: linear-gradient(45deg, #1a1a1a, #2d2d2d); display: flex; align-items: center; justify-content: center;">
+                        <img src="https://drive.google.com/uc?export=view&id=1GTy3sRmAs5WYLkj0b9daaFhfs9dxg8uj" alt="Wallets" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="category-content">
+                        <h3 class="category-title">Wallets</h3>
+                        <p class="category-desc">Premium leather wallets and card holders.</p>
+                        <a href="https://drive.google.com/drive/folders/1aLLwCQovIrWN6o10svXHsGA58Z2UA2nL?usp=drive_link" class="category-link" target="_blank">
+                            View Collection <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="category-card hidden-category">
+                    <div class="category-img" style="background: linear-gradient(45deg, #1a1a1a, #2d2d2d); display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-play-circle" style="font-size: 3rem; color: #c9a96e;"></i>
+                    </div>
+                    <div class="category-content">
+                        <h3 class="category-title">Videos Before Delivery</h3>
+                        <p class="category-desc">See your products before they arrive.</p>
+                        <a href="https://drive.google.com/drive/folders/1YR3xyGnctAQXPdBLL9J8-ykugzLJWJJ8?usp=drive_link" class="category-link" target="_blank">
+                            View Collection <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="category-card hidden-category">
+                    <div class="category-img" style="background: linear-gradient(45deg, #1a1a1a, #2d2d2d); display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-comment-alt" style="font-size: 3rem; color: #c9a96e;"></i>
+                    </div>
+                    <div class="category-content">
+                        <h3 class="category-title">Customer Reviews</h3>
+                        <p class="category-desc">See what our customers are saying.</p>
+                        <a href="https://drive.google.com/drive/folders/1NsfstzbuC8rq-4jSxIuWjdD4pVTUTbKU?usp=drive_link" class="category-link" target="_blank">
+                            View Collection <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="category-card hidden-category">
+                    <div class="category-img" style="background: linear-gradient(45deg, #1a1a1a, #2d2d2d); display: flex; align-items: center; justify-content: center;">
+                        <img src="https://drive.google.com/uc?export=view&id=1OuJe3wYsBdQDBDTQNC3Q1qOEtVqF0Zy6" alt="Shoes" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="category-content">
+                        <h3 class="category-title">Shoes</h3>
+                        <p class="category-desc">Elegant footwear for every occasion.</p>
+                        <a href="https://drive.google.com/drive/folders/1mPeb0bTJUtQs8aXxRuxd0n2FO4tJ-Q69?usp=drive_link" class="category-link" target="_blank">
+                            View Collection <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="category-card hidden-category">
+                    <div class="category-img" style="background: linear-gradient(45deg, #1a1a1a, #2d2d2d); display: flex; align-items: center; justify-content: center;">
+                        <img src="https://drive.google.com/uc?export=view&id=1AS-HES40O9Z2UMI5LArjFLogwVt1JAT0" alt="Belts" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="category-content">
+                        <h3 class="category-title">Belts</h3>
+                        <p class="category-desc">Complete your look with our premium belts.</p>
+                        <a href="https://drive.google.com/drive/folders/1zjVOcv5t5Zi1EJv12QL5WqpKeG9X82um?usp=drive_link" class="category-link" target="_blank">
+                            View Collection <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="category-card hidden-category">
+                    <div class="category-img" style="background: linear-gradient(45deg, #1a1a1a, #2d2d2d); display: flex; align-items: center; justify-content: center;">
+                        <img src="https://drive.google.com/uc?export=view&id=1bH_MJckwfqRkTP-G8ZjivRPpGM7VM0Po" alt="Accessories" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="category-content">
+                        <h3 class="category-title">Accessories</h3>
+                        <p class="category-desc">Complete your look with our accessories.</p>
+                        <a href="https://drive.google.com/drive/folders/1QSNHXObXXWrobW557xue6FLQPdzN5cdX?usp=drive_link" class="category-link" target="_blank">
+                            View Collection <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="category-card hidden-category">
+                    <div class="category-img" style="background: linear-gradient(45deg, #1a1a1a, #2d2d2d); display: flex; align-items: center; justify-content: center;">
+                        <img src="https://drive.google.com/uc?export=view&id=1XcXB_5Z0FAA1OCuVatxb5BFC1C6chBh3" alt="Jewellery" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="category-content">
+                        <h3 class="category-title">Jewellery</h3>
+                        <p class="category-desc">Exquisite pieces to complement your style.</p>
+                        <a href="https://drive.google.com/drive/folders/1E90hgZIPJjZp2FEphQV3GBS5nlezah1V?usp=drive_link" class="category-link" target="_blank">
+                            View Collection <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="view-more-container">
+                <button class="btn btn-secondary" id="viewMoreBtn">
+                    <i class="fas fa-chevron-down"></i> View More Categories
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlights Section -->
+    <section id="highlights" class="highlights-section">
+        <div class="container">
+            <div class="highlights">
+                <h2 class="section-title fade-in">Why Choose Us</h2>
+                <div class="highlights-grid">
+                    <div class="highlight-card fade-in delay-1">
+                        <div class="highlight-icon">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <h3 class="highlight-title">Fast Shipping</h3>
+                        <p class="highlight-desc">Free express shipping on orders over $500. Delivery within 3-5 business days.</p>
+                    </div>
+                    <div class="highlight-card fade-in delay-2">
+                        <div class="highlight-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h3 class="highlight-title">Authenticity Guaranteed</h3>
+                        <p class="highlight-desc">All our products are 100% authentic with certificates of authenticity.</p>
+                    </div>
+                    <div class="highlight-card fade-in delay-3">
+                        <div class="highlight-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3 class="highlight-title">Premium Support</h3>
+                        <p class="highlight-desc">Dedicated customer service team available to assist you with any inquiries.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Story Section -->
+    <section id="story" class="brand-story-section">
+        <div class="container">
+            <div class="brand-story">
+                <div class="story-content fade-in">
+                    <h2>Our Story of Craftsmanship</h2>
+                    <p>Founded in 2010, Luxury Collection began as a small boutique with a passion for exceptional craftsmanship and timeless design. Today, we curate the finest accessories from around the world, bringing our customers pieces that embody elegance and sophistication.</p>
+                    <p>Each item in our collection is carefully selected for its quality, design, and story. We believe that luxury is not just about price, but about the artistry and attention to detail that goes into creating something truly special.</p>
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fas fa-envelope"></i> Get In Touch
+                    </a>
+                </div>
+                <div class="story-image fade-in delay-1">
+                    <!-- Placeholder for story image -->
+                    <div style="width: 100%; height: 400px; background: linear-gradient(45deg, #1a1a1a, #2d2d2d); display: flex; align-items: center; justify-content: center; color: #c9a96e; font-size: 1.5rem;">
+                        <i class="fas fa-store" style="margin-right: 10px;"></i> Our Showroom
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter fade-in">
+                <h2>Stay Updated</h2>
+                <p>Subscribe to our newsletter to receive updates on new arrivals, exclusive offers, and styling tips.</p>
+                <form class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="Your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Luxury Collection</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Premium accessories for those who appreciate quality and design.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="#highlights">Highlights</a></li>
+                        <li><a href="#story">Our Story</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Shipping Information</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope" style="margin-right: 8px;"></i> moderntotehub@gmail.com</li>
+                        <li><i class="fas fa-phone" style="margin-right: 8px;"></i> +971 55 813 2128</li>
+                        <li><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i> Ajman, Dubai</li>
+                    </ul>
+                    <div class="dubai-note">
+                        For Dubai customers: Same day delivery with cash on delivery available
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Luxury Collection. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky Contact Bar -->
+    <div class="contact-bar">
+        <a href="https://wa.me/971558132128" class="contact-btn whatsapp" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            <span class="contact-tooltip">Chat on WhatsApp</span>
+        </a>
+        <a href="https://instagram.com/luxurycollection" class="contact-btn instagram" target="_blank">
+            <i class="fab fa-instagram"></i>
+            <span class="contact-tooltip">Follow on Instagram</span>
+        </a>
+        <a href="mailto:moderntotehub@gmail.com" class="contact-btn email">
+            <i class="fas fa-envelope"></i>
+            <span class="contact-tooltip">Send us an Email</span>
+        </a>
+    </div>
+
+    <!-- How to Order Modal -->
+    <div class="modal" id="howToOrderModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <h2 class="modal-title">How to Order</h2>
+            <p class="modal-subtitle">Follow these simple steps to place your order:</p>
+            
+            <div class="steps-list">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div>Visit our catalog and take screenshots of all items you like</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div>Click on WhatsApp and send us the images</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div>We will send you the prices for your selected items</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div>Confirm your order</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div>Before delivery, we will send you a video for final approval</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">6</div>
+                    <div>After approval, we will ship your product</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">7</div>
+                    <div>This entire process takes 4-10 working days</div>
+                </div>
+            </div>
+            
+            <h3 style="margin-bottom: 1rem;">Available Payment Methods:</h3>
+            <div class="payment-methods">
+                <div class="payment-method">PayPal</div>
+                <div class="payment-method">Stripe</div>
+                <div class="payment-method">Amazon Pay</div>
+                <div class="payment-method">Worldpay</div>
+                <div class="payment-method">Western Union</div>
+                <div class="payment-method">GoCardless</div>
+                <div class="payment-method">Sage Pay</div>
+                <div class="payment-method">2Checkout</div>
+                <div class="payment-method">Affirm</div>
+                <div class="payment-method">Alipay</div>
+                <div class="payment-method">Klarna</div>
+                <div class="payment-method">Payoneer</div>
+                <div class="payment-method">Verifone</div>
+                <div class="payment-method">And Others</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Theme Toggle Functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('i');
+        
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-theme');
+            
+            if (document.body.classList.contains('light-theme')) {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+        });
+
+        // Scroll Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for scroll animation
+        document.querySelectorAll('.section-title, .category-card, .highlight-card, .brand-story > *').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Newsletter Form Submission
+        const newsletterForm = document.querySelector('.newsletter-form');
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = newsletterForm.querySelector('input').value;
+            alert(`Thank you for subscribing with ${email}! You'll receive our latest updates soon.`);
+            newsletterForm.reset();
+        });
+
+        // How to Order Modal
+        const howToOrderBtn = document.getElementById('howToOrderBtn');
+        const howToOrderModal = document.getElementById('howToOrderModal');
+        const closeModal = document.getElementById('closeModal');
+
+        howToOrderBtn.addEventListener('click', () => {
+            howToOrderModal.style.display = 'flex';
+        });
+
+        closeModal.addEventListener('click', () => {
+            howToOrderModal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === howToOrderModal) {
+                howToOrderModal.style.display = 'none';
+            }
+        });
+
+        // View More Categories
+        const viewMoreBtn = document.getElementById('viewMoreBtn');
+        const hiddenCategories = document.querySelectorAll('.hidden-category');
+        let categoriesVisible = false;
+
+        viewMoreBtn.addEventListener('click', () => {
+            if (!categoriesVisible) {
+                hiddenCategories.forEach(category => {
+                    category.style.display = 'block';
+                    category.classList.add('fade-in');
+                });
+                viewMoreBtn.innerHTML = '<i class="fas fa-chevron-up"></i> View Less Categories';
+                categoriesVisible = true;
+            } else {
+                hiddenCategories.forEach(category => {
+                    category.style.display = 'none';
+                });
+                viewMoreBtn.innerHTML = '<i class="fas fa-chevron-down"></i> View More Categories';
+                categoriesVisible = false;
+            }
+        });
+    </script>
+</body>
+</html>
