@@ -5,43 +5,238 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LuvrenLuxe | Curated Digital Showroom</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <style>
-        /* --- PREMIUM THEME VARIABLES --- */
+        /* --- NEXT-LEVEL LUXURY THEME VARIABLES --- */
         :root {
-            /* Core Palette - Deep Gunmetal & Champagne with Purple Elite Mix */
-            --bg-main: #0e0e10;
-            --bg-secondary: #161618;
-            --bg-tertiary: #1c1c1f;
+            /* Advanced Color Palette - Deep Space & Royal Purple with Gold Accents */
+            --bg-main: #0a0a0c;
+            --bg-secondary: #12121a;
+            --bg-tertiary: #1a1a2e;
+            --bg-card: #16213e;
             
-            --accent-gold: #d4b886;      /* Muted Champagne Gold */
-            --accent-gold-light: #e6cfa7;
-            --accent-purple: #8b5fbf;     /* Elite Purple */
-            --accent-purple-light: #a478d1;
+            --accent-gold: #ffd700;      /* Pure Gold */
+            --accent-gold-light: #ffed4e;
+            --accent-purple: #6a4c93;     /* Royal Purple */
+            --accent-purple-light: #8b5fbf;
+            --accent-purple-dark: #4a2c5a;
+            --accent-neon: #c77dff;       /* Neon Purple */
             
             --text-primary: #ffffff;
-            --text-secondary: #a1a1aa;
-            --text-muted: #66666e;
+            --text-secondary: #b8b8d1;
+            --text-muted: #7c7c8a;
             
-            --border-subtle: rgba(212, 184, 134, 0.15); /* Subtle Gold Border */
-            --border-purple: rgba(139, 95, 191, 0.2);   /* Purple Border */
-            --glass-bg: rgba(14, 14, 16, 0.85);
+            --border-subtle: rgba(255, 215, 0, 0.1);
+            --border-purple: rgba(106, 76, 147, 0.3);
+            --border-neon: rgba(199, 125, 255, 0.4);
+            --glass-bg: rgba(10, 10, 12, 0.9);
+            --glass-purple: rgba(106, 76, 147, 0.1);
             
-            --section-spacing: 8rem; /* More breathing room */
-            --radius-sm: 4px;      /* Sharper corners for luxury feel */
-            --radius-md: 8px;
-            --transition-smooth: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Slower, smoother transitions */
+            --gradient-primary: linear-gradient(135deg, #6a4c93 0%, #c77dff 50%, #ffd700 100%);
+            --gradient-secondary: linear-gradient(135deg, #4a2c5a 0%, #6a4c93 100%);
+            --gradient-card: linear-gradient(135deg, rgba(22, 33, 62, 0.8) 0%, rgba(106, 76, 147, 0.1) 100%);
+            
+            --shadow-luxury: 0 20px 60px rgba(106, 76, 147, 0.3), 0 8px 25px rgba(0, 0, 0, 0.4);
+            --shadow-glow: 0 0 30px rgba(199, 125, 255, 0.3);
+            
+            --section-spacing: 10rem;
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --transition-smooth: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            --transition-fast: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* Light Theme Overrides - crisp and airy */
+        /* Light Theme Overrides - Premium & Elegant */
         .light-theme {
             --bg-main: #ffffff;
-            --bg-secondary: #f8f8fa;
-            --bg-tertiary: #f2f2f5;
+            --bg-secondary: #f9f7ff;
+            --bg-tertiary: #f3f0ff;
+            --bg-card: #faf8ff;
+            
+            --accent-gold: #d4af37;
+            --accent-gold-light: #e6c84f;
+            --accent-purple: #6a4c93;
+            --accent-purple-light: #8b5fbf;
+            --accent-purple-dark: #4a2c5a;
+            --accent-neon: #9b59d0;
+            
             --text-primary: #1a1a1a;
-            --text-secondary: #555555;
-            --border-subtle: rgba(0, 0, 0, 0.08);
-            --glass-bg: rgba(255, 255, 255, 0.9);
+            --text-secondary: #4a4a4a;
+            --text-muted: #6b6b6b;
+            
+            --border-subtle: rgba(106, 76, 147, 0.12);
+            --border-purple: rgba(106, 76, 147, 0.25);
+            --border-neon: rgba(155, 89, 208, 0.3);
+            --glass-bg: rgba(255, 255, 255, 0.95);
+            --glass-purple: rgba(106, 76, 147, 0.08);
+            
+            --gradient-primary: linear-gradient(135deg, #6a4c93 0%, #9b59d0 50%, #d4af37 100%);
+            --gradient-secondary: linear-gradient(135deg, #4a2c5a 0%, #6a4c93 100%);
+            --gradient-card: linear-gradient(135deg, rgba(250, 248, 255, 0.9) 0%, rgba(106, 76, 147, 0.08) 100%);
+            
+            --shadow-luxury: 0 20px 60px rgba(106, 76, 147, 0.15), 0 8px 25px rgba(0, 0, 0, 0.08);
+            --shadow-glow: 0 0 30px rgba(155, 89, 208, 0.25);
+        }
+        
+        .light-theme body {
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(106, 76, 147, 0.06) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(155, 89, 208, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(212, 175, 55, 0.04) 0%, transparent 50%);
+        }
+        
+        .light-theme body::before {
+            background: radial-gradient(circle at 50% 50%, rgba(106, 76, 147, 0.02) 1px, transparent 1px);
+            opacity: 0.5;
+        }
+        
+        .light-theme .welcome-popup {
+            background: rgba(106, 76, 147, 0.15);
+        }
+        
+        .light-theme .story-placeholder,
+        .light-theme .placeholder-img {
+            background: linear-gradient(45deg, var(--bg-tertiary), var(--bg-secondary));
+        }
+        
+        .light-theme .category-img-container {
+            background: var(--bg-tertiary);
+        }
+        
+        .light-theme .payment-badge {
+            background: var(--bg-secondary);
+            border-color: var(--border-subtle);
+        }
+        
+        .light-theme .mobile-nav {
+            background: var(--bg-main);
+        }
+        
+        .light-theme .theme-toggle {
+            background: var(--glass-purple);
+            border-color: var(--border-purple);
+        }
+        
+        .light-theme .nav-link::before {
+            background: var(--gradient-card);
+        }
+        
+        .light-theme .category-link::before,
+        .light-theme .btn::before {
+            background: linear-gradient(90deg, transparent, rgba(106, 76, 147, 0.15), transparent);
+        }
+        
+        .light-theme .promo-banner {
+            background: var(--gradient-primary);
+            border-bottom-color: var(--border-purple);
+        }
+        
+        .light-theme .header {
+            background: rgba(255, 255, 255, 0.95);
+            border-bottom-color: var(--border-purple);
+            box-shadow: 0 8px 32px rgba(106, 76, 147, 0.1), inset 0 1px 0 rgba(106, 76, 147, 0.05);
+        }
+        
+        .light-theme .category-card,
+        .light-theme .highlight-card,
+        .light-theme .welcome-content,
+        .light-theme .modal-content {
+            background: var(--gradient-card);
+            box-shadow: 0 10px 40px rgba(106, 76, 147, 0.12);
+        }
+        
+        .light-theme .category-card:hover,
+        .light-theme .highlight-card:hover {
+            box-shadow: var(--shadow-luxury), var(--shadow-glow);
+        }
+        
+        .light-theme .notification,
+        .light-theme .purchase-notification,
+        .light-theme .visitor-counter {
+            background: rgba(255, 255, 255, 0.98);
+            border-color: var(--border-purple);
+            box-shadow: 0 10px 40px rgba(106, 76, 147, 0.2);
+        }
+        
+        .light-theme .contact-orb {
+            background: rgba(255, 255, 255, 0.95);
+            border-color: var(--border-purple);
+            box-shadow: 0 8px 25px rgba(106, 76, 147, 0.2);
+        }
+        
+        .light-theme .trust-badge,
+        .light-theme .welcome-benefit {
+            background: rgba(255, 255, 255, 0.8);
+            border-color: var(--border-purple);
+        }
+        
+        .light-theme .hero {
+            background: 
+                linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(249, 247, 255, 0.95) 100%),
+                url('hero-background.png') center/cover no-repeat fixed;
+            background-color: var(--bg-main);
+        }
+        
+        .light-theme .hero::after {
+            background: linear-gradient(135deg, var(--bg-main) 0%, var(--bg-secondary) 100%);
+        }
+        
+        .light-theme .hero::before {
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(106, 76, 147, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 80% 20%, rgba(155, 89, 208, 0.08) 0%, transparent 40%),
+                radial-gradient(ellipse at center, transparent 0%, rgba(255, 255, 255, 0.3) 100%);
+        }
+        
+        .light-theme .footer,
+        .light-theme .highlights-section {
+            background: var(--bg-secondary);
+            border-color: var(--border-subtle);
+        }
+        
+        .light-theme .newsletter-container {
+            background: rgba(255, 255, 255, 0.9);
+            border-color: var(--border-purple);
+            box-shadow: 0 10px 30px rgba(106, 76, 147, 0.1);
+        }
+        
+        .light-theme .btn-primary {
+            box-shadow: 0 8px 25px rgba(106, 76, 147, 0.3);
+        }
+        
+        .light-theme .btn-outline-light {
+            background: rgba(106, 76, 147, 0.05);
+            border-color: var(--accent-purple);
+            color: var(--accent-purple);
+        }
+        
+        .light-theme .btn-outline-light:hover {
+            background: var(--accent-purple);
+            color: #ffffff;
+        }
+        
+        .light-theme #howToOrderBtnHero {
+            color: #ffffff;
+        }
+        
+        .light-theme .hero-title {
+            background: linear-gradient(135deg, #2a2a2a 0%, var(--accent-purple) 50%, var(--accent-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .light-theme .comparison-section {
+            background: rgba(255, 255, 255, 0.8) !important;
+            border-color: var(--border-purple) !important;
+        }
+        
+        .light-theme .nav-toggle {
+            border-color: var(--border-purple);
+            color: var(--text-secondary);
         }
 
         /* --- BASE RESETS --- */
@@ -49,13 +244,33 @@
         html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--bg-main);
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-main);
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(106, 76, 147, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(199, 125, 255, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(255, 215, 0, 0.05) 0%, transparent 50%);
             color: var(--text-primary);
             line-height: 1.7;
             font-weight: 300;
             transition: var(--transition-smooth);
             overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* Optimized background - removed heavy SVG */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.01) 1px, transparent 1px);
+            background-size: 20px 20px;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.3;
         }
 
         h1, h2, h3, h4, .logo {
@@ -74,13 +289,14 @@
 
         /* --- ELEGANT COMPONENTS --- */
         /* Buttons - Sharper, more minimal */
+        /* --- NEXT-LEVEL BUTTON SYSTEM --- */
         .btn {
-            padding: 1rem 2.5rem;
-            border-radius: 2px; /* Very slight radius for high-end feel */
-            font-size: 0.85rem;
-            font-weight: 500;
+            padding: 1.2rem 3rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.15em;
             text-decoration: none;
             transition: var(--transition-smooth);
             display: inline-flex;
@@ -88,66 +304,115 @@
             justify-content: center;
             gap: 1rem;
             cursor: pointer;
-            border: 1px solid transparent;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple), var(--accent-gold-light));
-            color: var(--bg-main);
-            box-shadow: 0 4px 15px rgba(212, 184, 134, 0.3), 0 4px 15px rgba(139, 95, 191, 0.2);
-        }
-        .btn-primary:hover {
-            background: linear-gradient(135deg, var(--accent-purple-light), var(--accent-gold-light), #f0d9b5);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(212, 184, 134, 0.5), 0 10px 25px rgba(139, 95, 191, 0.3);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border-color: var(--accent-gold);
-            color: var(--accent-gold);
-        }
-        .btn-outline:hover {
-            background: var(--accent-gold);
-            color: var(--bg-main);
-        }
-
-        /* NEW: Light outline button for hero */
-        .btn-outline-light {
-            background: transparent;
-            border-color: rgba(255, 255, 255, 0.5);
-            color: var(--text-primary);
-        }
-        .btn-outline-light:hover {
-            background: rgba(255, 255, 255, 1);
-            color: var(--bg-main);
-            border-color: #ffffff;
-        }
-
-        /* Next-level How to Order button styling */
-        #howToOrderBtnHero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
             border: 2px solid transparent;
-            background-clip: padding-box;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);
+            backdrop-filter: blur(10px);
         }
-        #howToOrderBtnHero::before {
+        .btn::before {
             content: '';
             position: absolute;
             top: 0; left: -100%;
             width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.6s;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.8s;
         }
-        #howToOrderBtnHero:hover::before {
+        .btn:hover::before {
             left: 100%;
         }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: #ffffff;
+            box-shadow: var(--shadow-luxury);
+            border-color: var(--accent-neon);
+        }
+        .btn-primary:hover {
+            background: var(--gradient-secondary);
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: var(--shadow-luxury), var(--shadow-glow);
+            border-color: var(--accent-gold);
+        }
+
+        .btn-outline {
+            background: var(--glass-purple);
+            border-color: var(--accent-neon);
+            color: var(--accent-neon);
+            backdrop-filter: blur(15px);
+        }
+        .btn-outline:hover {
+            background: var(--gradient-primary);
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .btn-outline-light {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.3);
+            color: var(--text-primary);
+            backdrop-filter: blur(15px);
+        }
+        .btn-outline-light:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--accent-neon);
+            color: var(--accent-neon);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        /* Light theme button adjustments */
+        .light-theme .btn-outline-light {
+            background: rgba(106, 76, 147, 0.05);
+            border-color: var(--accent-purple);
+            color: var(--accent-purple);
+        }
+        .light-theme .btn-outline-light:hover {
+            background: var(--accent-purple);
+            color: #ffffff;
+            border-color: var(--accent-purple);
+        }
+        
+        /* Trust Badge Button */
+        .btn-trust {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: #ffffff;
+            border-color: #10b981;
+            position: relative;
+        }
+        .btn-trust::after {
+            content: '✓';
+            position: absolute;
+            right: 1rem;
+            font-size: 1.2rem;
+        }
+        .btn-trust:hover {
+            background: linear-gradient(135deg, #059669, #047857);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+        }
+
+        /* Enhanced How to Order button styling */
+        #howToOrderBtnHero {
+            background: var(--gradient-primary);
+            border: 2px solid var(--accent-neon);
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-luxury), var(--shadow-glow);
+            color: #ffffff;
+        }
+        #howToOrderBtnHero::after {
+            content: '→';
+            transition: var(--transition-fast);
+            margin-left: 0.5rem;
+        }
         #howToOrderBtnHero:hover {
-            background: linear-gradient(135deg, #764ba2 0%, #667eea 50%, #f093fb 100%);
-            transform: translateY(-3px);
-            box-shadow: 0 12px 40px rgba(102, 126, 234, 0.5);
+            background: var(--gradient-secondary);
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: var(--shadow-luxury), 0 15px 50px rgba(199, 125, 255, 0.6);
+        }
+        #howToOrderBtnHero:hover::after {
+            transform: translateX(5px);
         }
 
         /* Section Headers - Refined */
@@ -174,99 +439,170 @@
             margin-bottom: 1rem;
         }
 
-        /* --- PROMOTIONAL BANNER --- */
+        /* --- ADVANCED PROMOTIONAL BANNER --- */
         .promo-banner {
             position: fixed;
             top: 0;
             width: 100%;
-            background: linear-gradient(135deg, #ff6b35, #f7931e, #ff8c42);
+            background: var(--gradient-primary);
             color: #ffffff;
             text-align: center;
-            padding: 0.8rem 0;
+            padding: 1rem 0;
             font-size: 0.9rem;
             font-weight: 600;
             z-index: 1001;
-            animation: pulse 2s infinite;
-            box-shadow: 0 2px 10px rgba(255, 107, 53, 0.3);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-neon);
+            box-shadow: 0 4px 20px rgba(106, 76, 147, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            animation: bannerGlow 3s ease-in-out infinite alternate;
         }
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
+        @keyframes bannerGlow {
+            0% { box-shadow: 0 4px 20px rgba(106, 76, 147, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1); }
+            100% { box-shadow: 0 4px 30px rgba(199, 125, 255, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.2); }
         }
         .promo-banner .countdown {
-            color: #fff200;
+            color: var(--accent-gold);
             font-weight: 700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+        .promo-banner i {
+            animation: sparkle 2s ease-in-out infinite;
+        }
+        @keyframes sparkle {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.1) rotate(180deg); }
         }
 
-        /* --- HEADER & NAV --- */
+        /* --- ADVANCED HEADER & NAV --- */
         .header {
             position: fixed;
-            top: 50px; width: 100%;
+            top: 60px; width: 100%;
             z-index: 1000;
-            padding: 1.2rem 0;
+            padding: 1.5rem 0;
             background: var(--glass-bg);
-            backdrop-filter: blur(12px); /* Stronger frosted glass */
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-subtle);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-purple);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05);
             transition: var(--transition-smooth);
+        }
+        .header.scrolled {
+            background: rgba(10, 10, 12, 0.95);
+            border-bottom-color: var(--border-neon);
+            box-shadow: var(--shadow-luxury);
         }
         .nav { display: flex; justify-content: space-between; align-items: center; }
         .logo {
-            font-size: 1.8rem;
+            font-size: 2rem;
             color: var(--text-primary);
             text-decoration: none;
-            display: flex; align-items: center; gap: 0.8rem;
+            display: flex; align-items: center; gap: 1rem;
+            position: relative;
         }
         .logo i { 
-            background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple));
+            background: var(--gradient-primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            font-size: 1.4rem; 
+            font-size: 1.6rem;
+            filter: drop-shadow(0 0 8px rgba(199, 125, 255, 0.4));
+            animation: logoGlow 4s ease-in-out infinite alternate;
         }
-        .logo span { font-weight: 600; }
+        @keyframes logoGlow {
+            0% { filter: drop-shadow(0 0 8px rgba(199, 125, 255, 0.4)); }
+            100% { filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.6)); }
+        }
+        .logo span { 
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
         .nav-links { display: flex; gap: 3rem; align-items: center; }
         .nav-link {
             color: var(--text-secondary);
             text-decoration: none;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.15em;
             font-weight: 500;
             position: relative;
             transition: var(--transition-smooth);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-sm);
         }
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: var(--gradient-card);
+            border-radius: var(--radius-sm);
+            opacity: 0;
+            transition: var(--transition-fast);
+            z-index: -1;
+        }
+        .nav-link:hover::before {
+            opacity: 1;
+        }
+        .nav-link::after {
+            content: ''; position: absolute; bottom: -2px; left: 50%;
+            width: 0; height: 2px;
+            background: var(--gradient-primary);
+            transition: var(--transition-fast);
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        .nav-link:hover { 
+            color: var(--text-primary);
+            text-shadow: 0 0 10px rgba(199, 125, 255, 0.5);
+        }
+        .nav-link:hover::after { width: 80%; }
+        
         /* Special styling for nav How to Order buttons */
         #howToOrderBtnNav, #howToOrderBtnFooter, #howToOrderBtnMobile {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: var(--gradient-primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             font-weight: 600;
+            position: relative;
         }
-        .nav-link::after {
-            content: ''; position: absolute; bottom: -5px; left: 0;
-            width: 0; height: 1px; 
-            background: linear-gradient(90deg, var(--accent-gold), var(--accent-purple));
-            transition: var(--transition-smooth);
+        #howToOrderBtnNav::before {
+            background: var(--gradient-secondary);
         }
-        .nav-link:hover { color: var(--text-primary); }
-        .nav-link:hover::after { width: 100%; }
         
         .nav-actions { display: flex; gap: 1rem; align-items: center; }
 
         .theme-toggle {
-            background: none; border: 1px solid var(--border-subtle);
+            background: var(--glass-purple);
+            border: 1px solid var(--border-purple);
             color: var(--text-secondary);
-            width: 40px; height: 40px; border-radius: 50%;
+            width: 45px; height: 45px; border-radius: 50%;
             cursor: pointer; transition: var(--transition-smooth);
             display: flex; align-items: center; justify-content: center;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+        .theme-toggle::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: var(--transition-fast);
+            border-radius: 50%;
+        }
+        .theme-toggle:hover::before {
+            opacity: 0.1;
         }
         .theme-toggle:hover { 
-            border-color: var(--accent-purple); 
-            color: var(--accent-purple);
-            box-shadow: 0 0 15px rgba(139, 95, 191, 0.3);
+            border-color: var(--accent-neon); 
+            color: var(--accent-neon);
+            box-shadow: var(--shadow-glow);
+            transform: scale(1.05);
         }
 
         /* NEW: Mobile Nav Toggle */
@@ -316,127 +652,294 @@
         .mobile-nav .btn { margin-top: 1rem; }
 
 
-        /* --- NOTIFICATION SYSTEM (Top Right) --- */
+        /* --- OPTIMIZED NOTIFICATION SYSTEM --- */
         .notification {
             position: fixed;
-            top: 100px;
+            top: 120px;
             right: 20px;
             background: var(--glass-bg);
-            backdrop-filter: blur(12px);
-            border: 1px solid var(--border-subtle);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--border-neon);
             border-radius: var(--radius-md);
             padding: 1rem 1.5rem;
-            color: #ffffff;
+            color: var(--text-primary);
             font-size: 0.85rem;
-            z-index: 1001;
-            transform: translateX(400px);
-            transition: transform 0.3s ease;
-            max-width: 300px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            z-index: 1002;
+            transform: translateX(400px) rotateY(90deg);
+            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            max-width: 320px;
+            box-shadow: 0 10px 40px rgba(106, 76, 147, 0.4);
+            will-change: transform;
+        }
+        .notification::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: var(--gradient-primary);
+            opacity: 0.03;
+            z-index: -1;
         }
         .notification.show {
-            transform: translateX(0);
+            transform: translateX(0) rotateY(0deg);
         }
         .notification .icon {
-            color: var(--accent-gold);
-            margin-right: 0.5rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-right: 0.7rem;
+            font-size: 1rem;
+            animation: iconBounce 2s ease-in-out infinite;
+        }
+        @keyframes iconBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-3px); }
         }
         .notification .purple-text {
-            color: #a478d1;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             font-weight: 600;
         }
+        .notification .close-btn {
+            position: absolute;
+            top: 6px; right: 10px;
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: var(--transition-fast);
+        }
+        .notification .close-btn:hover {
+            color: var(--accent-neon);
+            transform: rotate(90deg);
+        }
+        
+        /* Mobile notification positioning */
+        @media (max-width: 768px) {
+            .notification {
+                top: 80px;
+                right: 15px;
+                left: 15px;
+                max-width: none;
+                transform: translateY(-100px) scale(0.9);
+                font-size: 0.8rem;
+                padding: 0.9rem 1.2rem;
+            }
+            .notification.show {
+                transform: translateY(0) scale(1);
+            }
+        }
 
-        /* --- HERO SECTION (UPDATED) --- */
+        /* --- HERO SECTION WITH BACKGROUND IMAGE --- */
         .hero {
             min-height: 100vh;
             display: flex; align-items: center; justify-content: center;
-            padding-top: 130px;
-            background-image: url('hero-background.png'); /* Assumes hero-background.png is in the same folder */
-            background-size: cover;
-            background-position: center center;
-            background-attachment: fixed;
+            padding-top: 140px;
+            background: 
+                linear-gradient(135deg, rgba(10, 10, 12, 0.85) 0%, rgba(18, 18, 26, 0.9) 100%),
+                url('hero-background.png') center/cover no-repeat fixed;
+            background-color: var(--bg-main);
             position: relative;
             overflow: hidden;
         }
         
-        .hero::before { /* Original grain effect */
-            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
-            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
-            opacity: 0.3;
-        }
-
-        .hero::after { /* UPDATED: Cinematic vignette overlay */
+        /* Fallback if image doesn't load */
+        .hero::after {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(ellipse at center, rgba(14, 14, 16, 0.2) 0%, rgba(14, 14, 16, 0.9) 100%);
+            background: linear-gradient(135deg, var(--bg-main) 0%, var(--bg-secondary) 100%);
+            z-index: -1;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(106, 76, 147, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 20%, rgba(199, 125, 255, 0.12) 0%, transparent 40%),
+                radial-gradient(ellipse at center, transparent 0%, rgba(10, 10, 12, 0.4) 100%);
+            animation: gradientShift 15s ease-in-out infinite alternate;
             z-index: 1;
+        }
+        @keyframes gradientShift {
+            0% { opacity: 0.6; }
+            100% { opacity: 0.9; }
         }
 
         .hero-content {
             text-align: center;
-            max-width: 900px;
-            z-index: 2; /* Ensures content is above overlay */
+            max-width: 1000px;
+            z-index: 2;
+            position: relative;
+            padding: 2rem;
         }
         .hero-eyebrow {
-            color: var(--accent-gold);
-            font-size: 0.9rem;
-            letter-spacing: 0.4em;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 1rem;
+            letter-spacing: 0.5em;
             text-transform: uppercase;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             display: block;
             font-weight: 600;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            position: relative;
+        }
+        .hero-eyebrow::after {
+            content: '';
+            position: absolute;
+            bottom: -10px; left: 50%;
+            width: 60px; height: 2px;
+            background: var(--gradient-primary);
+            transform: translateX(-50%);
+            border-radius: 2px;
         }
         .hero-title {
-            font-size: 4.5rem;
-            font-weight: 500;
+            font-size: 5.5rem;
+            font-weight: 700;
             line-height: 1.1;
-            margin-bottom: 2rem;
-            color: var(--text-primary); 
-            text-shadow: 0 4px 15px rgba(0,0,0,0.6);
+            margin-bottom: 2.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, var(--accent-neon) 50%, var(--accent-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            animation: titleGlow 4s ease-in-out infinite alternate;
+        }
+        @keyframes titleGlow {
+            0% { 
+                filter: drop-shadow(0 0 20px rgba(199, 125, 255, 0.3));
+            }
+            100% { 
+                filter: drop-shadow(0 0 40px rgba(255, 215, 0, 0.4));
+            }
+        }
+        .hero-title::before {
+            content: attr(data-text);
+            position: absolute;
+            top: 0; left: 0;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            z-index: -1;
+            filter: blur(30px);
+            opacity: 0.3;
         }
         .hero-subtitle {
-            font-size: 1.2rem;
-            color: #e0e0e0;
-            max-width: 600px;
-            margin: 0 auto 3.5rem;
-            font-weight: 300;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 4rem;
+            font-weight: 400;
+            line-height: 1.6;
+            position: relative;
         }
         .hero-actions {
-            display: flex; gap: 1.5rem; justify-content: center;
+            display: flex; gap: 2rem; justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 4rem;
+        }
+        
+        /* Trust Badges */
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem 1.5rem;
+            background: var(--glass-purple);
+            border: 1px solid var(--border-purple);
+            border-radius: var(--radius-md);
+            backdrop-filter: blur(15px);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: var(--transition-smooth);
+        }
+        .trust-badge i {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 1.1rem;
+        }
+        .trust-badge:hover {
+            border-color: var(--accent-neon);
+            color: var(--text-primary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-glow);
         }
 
-        /* --- COLLECTIONS GRID (Elevated) --- */
+        /* --- NEXT-LEVEL COLLECTIONS GRID --- */
         .categories-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2.5rem;
         }
         .category-card {
-            background-color: var(--bg-secondary);
-            border: 1px solid var(--border-subtle);
+            background: var(--gradient-card);
+            border: 1px solid var(--border-purple);
+            border-radius: var(--radius-lg);
             transition: var(--transition-smooth);
             position: relative;
             overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: var(--transition-smooth);
+            z-index: 1;
+        }
+        .category-card:hover::before {
+            opacity: 0.05;
         }
         .category-card:hover {
-            border-color: var(--accent-purple);
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(139, 95, 191, 0.3), 0 15px 35px rgba(212, 184, 134, 0.1);
+            border-color: var(--accent-neon);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-luxury), var(--shadow-glow);
         }
         .category-img-container {
-            height: 240px;
+            height: 280px;
             overflow: hidden;
             position: relative;
             background: var(--bg-tertiary);
+            border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+        }
+        .category-img-container::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(135deg, transparent 0%, rgba(106, 76, 147, 0.1) 100%);
+            z-index: 2;
+            transition: var(--transition-smooth);
+        }
+        .category-card:hover .category-img-container::after {
+            background: linear-gradient(135deg, transparent 0%, rgba(199, 125, 255, 0.2) 100%);
         }
         .category-img-container img, .category-img-container i {
             width: 100%; height: 100%; object-fit: cover;
-            transition: transform 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
-        .category-card:hover .category-img-container img { transform: scale(1.08); }
+        .category-card:hover .category-img-container img { 
+            transform: scale(1.1) rotate(1deg);
+        }
 
         /* Placeholder styling for icon-based images */
         .placeholder-img {
@@ -449,36 +952,69 @@
         }
 
         .category-content {
-            padding: 2rem;
+            padding: 2.5rem;
             text-align: center;
+            position: relative;
+            z-index: 3;
         }
         .category-title {
-            font-size: 1.4rem;
-            margin-bottom: 0.8rem;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
             color: var(--text-primary);
+            font-weight: 600;
+            position: relative;
         }
         .category-desc {
             color: var(--text-secondary);
-            font-size: 0.9rem;
-            margin-bottom: 1.5rem;
-            min-height: 40px; /* Ensures consistent card height */
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            min-height: 50px;
+            line-height: 1.6;
         }
         .category-link {
-            color: var(--accent-gold);
-            text-decoration: none;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            font-weight: 600;
-            display: inline-block;
-            transition: var(--transition-smooth);
-        }
-        .category-link:hover { 
-            letter-spacing: 0.3em; 
-            background: linear-gradient(135deg, var(--accent-purple), var(--accent-gold));
+            background: var(--gradient-primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition-smooth);
+            position: relative;
+            padding: 0.8rem 1.5rem;
+            border: 1px solid var(--border-purple);
+            border-radius: var(--radius-sm);
+            backdrop-filter: blur(10px);
+        }
+        .category-link::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: var(--transition-fast);
+            border-radius: var(--radius-sm);
+        }
+        .category-link:hover::before {
+            opacity: 0.1;
+        }
+        .category-link:hover { 
+            letter-spacing: 0.3em;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-glow);
+            border-color: var(--accent-neon);
+        }
+        .category-link::after {
+            content: '→';
+            transition: var(--transition-fast);
+        }
+        .category-link:hover::after {
+            transform: translateX(5px);
         }
         
         /* --- NEW: 'View More' Styles --- */
@@ -672,62 +1208,97 @@
             display: flex; justify-content: space-between;
         }
 
-        /* --- STICKY ACTIONS --- */
+        /* --- ADVANCED STICKY ACTIONS --- */
         .contact-bar {
-            position: fixed; bottom: 2rem; right: 2rem;
-            display: flex; flex-direction: column; gap: 1rem; z-index: 900;
+            position: fixed; bottom: 2.5rem; right: 2.5rem;
+            display: flex; flex-direction: column; gap: 1.2rem; z-index: 900;
         }
         .contact-orb {
-            width: 55px; height: 55px;
+            width: 65px; height: 65px;
             border-radius: 50%;
-            background: var(--bg-secondary);
-            border: 1px solid var(--accent-gold);
-            color: var(--accent-gold);
+            background: var(--glass-bg);
+            border: 2px solid var(--border-purple);
+            color: var(--text-primary);
             display: flex; align-items: center; justify-content: center;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             text-decoration: none;
-            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+            box-shadow: var(--shadow-luxury);
             transition: var(--transition-smooth);
             position: relative;
+            backdrop-filter: blur(15px);
+            overflow: hidden;
+        }
+        .contact-orb::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: var(--transition-fast);
+            border-radius: 50%;
+        }
+        .contact-orb:hover::before {
+            opacity: 0.1;
         }
         
-        /* NEW: Colorful Icons */
+        /* Enhanced Colorful Icons */
         .contact-orb.whatsapp {
-            background: linear-gradient(135deg, #25D366, #20c55a);
+            background: linear-gradient(135deg, #25D366, #128C7E);
             border-color: #25D366;
             color: #ffffff;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4), var(--shadow-glow);
         }
         .contact-orb.whatsapp:hover {
-            background: linear-gradient(135deg, #1EBE56, #1aa84a);
-            border-color: #1EBE56;
-            transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            background: linear-gradient(135deg, #20c55a, #075E54);
+            transform: scale(1.15) rotate(5deg);
+            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6), var(--shadow-glow);
         }
         .contact-orb.email {
-            background: linear-gradient(135deg, #EA4335, #e53e2b);
+            background: linear-gradient(135deg, #EA4335, #C5221F);
             border-color: #EA4335;
             color: #ffffff;
-            box-shadow: 0 4px 15px rgba(234, 67, 53, 0.3);
+            box-shadow: 0 8px 25px rgba(234, 67, 53, 0.4), var(--shadow-glow);
         }
         .contact-orb.email:hover {
-            background: linear-gradient(135deg, #D93025, #c7281c);
-            border-color: #D93025;
-            transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(234, 67, 53, 0.4);
+            background: linear-gradient(135deg, #D93025, #B52D20);
+            transform: scale(1.15) rotate(-5deg);
+            box-shadow: 0 12px 35px rgba(234, 67, 53, 0.6), var(--shadow-glow);
+        }
+        .contact-orb.phone {
+            background: var(--gradient-primary);
+            border-color: var(--accent-neon);
+            color: #ffffff;
+            box-shadow: var(--shadow-luxury), var(--shadow-glow);
+        }
+        .contact-orb.phone:hover {
+            transform: scale(1.15) rotate(5deg);
+            box-shadow: 0 15px 40px rgba(106, 76, 147, 0.6), var(--shadow-glow);
         }
 
-        /* Tooltip re-styled */
-        .contact-orb::before {
+        /* Enhanced Tooltip */
+        .contact-orb::after {
             content: attr(data-tooltip);
-            position: absolute; right: 70px;
-            background: var(--bg-secondary); color: var(--text-primary);
-            padding: 0.5rem 1rem; font-size: 0.75rem;
-            border: 1px solid var(--border-subtle);
-            white-space: nowrap; opacity: 0; pointer-events: none;
-            transition: var(--transition-smooth); letter-spacing: 0.05em;
+            position: absolute; right: 80px; top: 50%;
+            transform: translateY(-50%);
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            color: var(--text-primary);
+            padding: 0.8rem 1.2rem;
+            font-size: 0.8rem;
+            border: 1px solid var(--border-neon);
+            border-radius: var(--radius-sm);
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition-smooth);
+            letter-spacing: 0.05em;
+            font-weight: 500;
+            box-shadow: var(--shadow-luxury);
         }
-        .contact-orb:hover::before { opacity: 1; right: 65px; }
+        .contact-orb:hover::after {
+            opacity: 1;
+            right: 75px;
+        }
 
         /* --- MODAL (Frosted) --- */
         .modal {
@@ -791,25 +1362,30 @@
         @media (max-width: 768px) {
             .container { padding: 0 1.5rem; }
             .nav-links { display: none; }
-            .nav-actions .btn { display: none; } /* Hide contact button in nav */
-            .nav-toggle { display: flex; } /* Show hamburger */
-            .promo-banner { font-size: 0.8rem; padding: 0.6rem 0; }
+            .nav-actions .btn { display: none; }
+            .nav-toggle { display: flex; }
+            .promo-banner { font-size: 0.8rem; padding: 0.8rem 0; }
             
-            .hero-title { font-size: 2.8rem; }
+            .hero-title { font-size: 3.2rem; }
             .hero-actions { 
                 flex-direction: column; 
-                gap: 1rem;
+                gap: 1.5rem;
                 width: 100%;
                 padding: 0 2rem;
             }
             .hero-actions .btn {
                 width: 100%;
-                padding: 1.2rem 2rem;
+                padding: 1.3rem 2rem;
                 font-size: 0.9rem;
             }
             
-            .section-title { font-size: 2.5rem; }
-            .categories-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+            .trust-badges {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            
+            .section-title { font-size: 2.8rem; }
+            .categories-grid { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
             
             .newsletter-form { flex-direction: column; gap: 1rem; }
             .newsletter-form .btn { width: 100%; }
@@ -818,27 +1394,43 @@
             .footer-grid { grid-template-columns: 1fr; gap: 3rem; }
             .modal-content { padding: 3rem 2rem; }
             .footer-bottom { flex-direction: column; gap: 1rem; }
+            
+            .contact-bar {
+                bottom: 2rem;
+                right: 1.5rem;
+            }
+            .contact-orb {
+                width: 55px;
+                height: 55px;
+                font-size: 1.2rem;
+            }
         }
         
         @media (max-width: 576px) {
             section { padding: 6rem 0; }
-            .hero-title { font-size: 2.2rem; }
+            .hero-title { font-size: 2.5rem; }
             .hero-subtitle { font-size: 1rem; }
             .hero-actions { 
                 padding: 0 1rem;
-                gap: 1rem;
+                gap: 1.2rem;
             }
             .hero-actions .btn {
                 width: 100%;
-                padding: 1rem 1.5rem;
-                font-size: 0.8rem;
+                padding: 1.1rem 1.5rem;
+                font-size: 0.85rem;
                 text-align: center;
             }
             
-            .section-title { font-size: 2rem; }
+            .trust-badges {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.8rem;
+            }
+            
+            .section-title { font-size: 2.2rem; }
             .section-header { margin-bottom: 3rem; }
             
-            .categories-grid { grid-template-columns: 1fr; } /* Stack cards */
+            .categories-grid { grid-template-columns: 1fr; }
             .highlights-grid { grid-template-columns: 1fr; gap: 2rem; }
             .brand-story { gap: 3rem; }
             .story-content h2 { font-size: 2.5rem; }
@@ -847,58 +1439,316 @@
             }
             .story-placeholder { height: 350px; }
             .contact-bar { bottom: 1rem; right: 1rem; }
-            .contact-orb::before { display: none; } /* Hide tooltips on mobile */
+            .contact-orb::after { display: none; }
+            .contact-orb {
+                width: 50px;
+                height: 50px;
+                font-size: 1.1rem;
+            }
         }
 
-        /* --- Purchase Notification Bubble (Bottom Left) --- */
+        /* --- OPTIMIZED Purchase Notification --- */
         .purchase-notification {
             position: fixed;
-            bottom: -100px;
-            left: 2rem;
+            bottom: -120px;
+            left: 20px;
             z-index: 1005;
             background: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid var(--border-subtle);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--border-neon);
             color: var(--text-primary);
             padding: 1.2rem 1.5rem;
             border-radius: var(--radius-md);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 30px rgba(106, 76, 147, 0.4);
             display: flex;
             align-items: center;
             gap: 1rem;
-            font-size: 0.9rem;
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 0.85rem;
+            transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            max-width: 350px;
+            will-change: transform;
+        }
+        .purchase-notification::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: var(--gradient-primary);
+            opacity: 0.03;
+            z-index: -1;
         }
         .purchase-notification.show {
-            bottom: 2rem;
+            bottom: 20px;
+            transform: translateX(0) scale(1);
         }
         .purchase-notification .icon-bubble {
-            width: 30px;
-            height: 30px;
-            background: var(--accent-gold);
-            color: var(--bg-main);
+            width: 35px;
+            height: 35px;
+            background: var(--gradient-primary);
+            color: #ffffff;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             flex-shrink: 0;
+            animation: iconSpin 3s linear infinite;
+        }
+        @keyframes iconSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
         .purchase-notification p {
             margin: 0;
             line-height: 1.4;
+            font-weight: 500;
         }
-
-        /* Responsive for notification */
-        @media (max-width: 576px) {
+        .purchase-notification .close-purchase {
+            position: absolute;
+            top: 8px; right: 12px;
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 1rem;
+            transition: var(--transition-fast);
+        }
+        .purchase-notification .close-purchase:hover {
+            color: var(--accent-neon);
+            transform: rotate(90deg);
+        }
+        
+        /* Mobile purchase notification */
+        @media (max-width: 768px) {
             .purchase-notification {
-                left: 1rem;
-                right: 1rem;
-                bottom: -100px;
+                top: 80px;
+                left: 15px;
+                right: 15px;
+                bottom: auto;
+                max-width: none;
+                transform: translateY(-100px) scale(0.9);
+                font-size: 0.8rem;
+                padding: 1rem 1.2rem;
             }
             .purchase-notification.show {
-                bottom: 1rem;
+                transform: translateY(0) scale(1);
+                bottom: auto;
+            }
+        }
+
+        /* Live Visitor Counter */
+        .visitor-counter {
+            position: fixed;
+            top: 50%;
+            left: -120px;
+            transform: translateY(-50%);
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--border-purple);
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            padding: 1rem 1.5rem;
+            z-index: 999;
+            transition: all 0.5s ease;
+            box-shadow: 0 8px 25px rgba(106, 76, 147, 0.3);
+            will-change: transform;
+        }
+        .visitor-counter.show {
+            left: 0;
+        }
+        .visitor-display {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        .visitor-display i {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 1.1rem;
+            animation: eyeBlink 3s ease-in-out infinite;
+        }
+        @keyframes eyeBlink {
+            0%, 90%, 100% { transform: scaleY(1); }
+            95% { transform: scaleY(0.1); }
+        }
+        .visitor-count {
+            color: var(--accent-neon);
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        .visitor-count.updating {
+            transform: scale(1.1);
+            color: var(--accent-gold);
+        }
+        
+        @media (max-width: 768px) {
+            .visitor-counter {
+                display: none;
+            }
+        }
+        
+        /* Optimized mobile styles */
+        /* Welcome Popup */
+        .welcome-popup {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 3000;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.5s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .welcome-popup.show {
+            display: flex;
+        }
+        .welcome-content {
+            background: var(--bg-secondary);
+            border: 2px solid var(--border-neon);
+            border-radius: var(--radius-lg);
+            padding: 3rem;
+            max-width: 550px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            animation: slideUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: var(--shadow-luxury), var(--shadow-glow);
+        }
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .welcome-content::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: var(--gradient-primary);
+            opacity: 0.05;
+            border-radius: var(--radius-lg);
+            z-index: -1;
+        }
+        .welcome-icon {
+            width: 80px; height: 80px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            box-shadow: var(--shadow-glow);
+            animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .welcome-icon i {
+            font-size: 2.5rem;
+            color: #ffffff;
+        }
+        .welcome-title {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .welcome-text {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+        .welcome-benefits {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+            text-align: left;
+        }
+        .welcome-benefit {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.8rem;
+            background: var(--glass-purple);
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-purple);
+        }
+        .welcome-benefit i {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 1.2rem;
+        }
+        .welcome-benefit span {
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .welcome-close {
+            background: var(--gradient-primary);
+            color: #ffffff;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            box-shadow: var(--shadow-luxury);
+        }
+        .welcome-close:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-luxury), var(--shadow-glow);
+        }
+        
+        @media (max-width: 768px) {
+            .welcome-content {
+                padding: 2.5rem 2rem;
+            }
+            .welcome-benefits {
+                grid-template-columns: 1fr;
+            }
+            .comparison-section > div {
+                grid-template-columns: 1fr !important;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .trust-badges {
+                gap: 0.8rem;
+            }
+            .trust-badge {
+                padding: 0.7rem 1rem;
+                font-size: 0.75rem;
+            }
+            .notification {
+                font-size: 0.75rem;
+                padding: 0.8rem 1rem;
+            }
+            .welcome-content {
+                padding: 2rem 1.5rem;
+            }
+            .welcome-title {
+                font-size: 1.8rem;
+            }
+            .welcome-text {
+                font-size: 0.95rem;
             }
         }
     </style>
@@ -949,11 +1799,37 @@
     <section class="hero">
         <div class="hero-content fade-up">
             <span class="hero-eyebrow">Est. 2010 &mdash; Dubai</span>
-            <h1 class="hero-title">Purveyors of<br>Fine Accessories</h1>
-            <p class="hero-subtitle">Curating exceptional timepieces, designer bags, and exquisite jewelry for the discerning individual. Experience true craftsmanship.</p>
+            <h1 class="hero-title" data-text="Purveyors of Fine Accessories">Purveyors of<br>Fine Accessories</h1>
+            <p class="hero-subtitle">Premium 1:1 replicas crafted with authentic materials—genuine leather, luxury hardware, and meticulous attention to detail. Indistinguishable from originals, delivered in 4-6 days worldwide.</p>
             <div class="hero-actions">
-                <a href="#collections" class="btn btn-primary">Explore Collections</a>
-                <button id="howToOrderBtnHero" class="btn btn-outline-light">How to Order</button>
+                <a href="#collections" class="btn btn-primary">
+                    <i class="fas fa-gem"></i>
+                    Explore Collections
+                </a>
+                <button id="howToOrderBtnHero" class="btn btn-outline-light">
+                    <i class="fas fa-shopping-cart"></i>
+                    How to Order
+                </button>
+            </div>
+            
+            <!-- Trust Badges -->
+            <div class="trust-badges fade-up delay-3">
+                <div class="trust-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Verified Authentic</span>
+                </div>
+                <div class="trust-badge">
+                    <i class="fas fa-shipping-fast"></i>
+                    <span>Global Shipping</span>
+                </div>
+                <div class="trust-badge">
+                    <i class="fas fa-lock"></i>
+                    <span>Secure Payment</span>
+                </div>
+                <div class="trust-badge">
+                    <i class="fas fa-headset"></i>
+                    <span>24/7 Support</span>
+                </div>
             </div>
         </div>
     </section>
@@ -1112,27 +1988,113 @@
         </div>
     </section>
 
+    <!-- Why Choose Us Section -->
+    <section id="why-choose-us" style="background: var(--bg-secondary); padding: var(--section-spacing) 0; border-top: 1px solid var(--border-purple); border-bottom: 1px solid var(--border-purple);">
+        <div class="container">
+            <header class="section-header fade-up">
+                <span class="section-subtitle">Why Choose LuvrenLuxe</span>
+                <h2 class="section-title">Superior Quality, Unmatched Service</h2>
+                <p style="color: var(--text-secondary); max-width: 700px; margin: 1.5rem auto 0; font-size: 1.1rem;">We don't just sell replicas—we deliver masterpieces crafted with the same materials and techniques as the originals. Experience the difference that sets us apart from cheap imitations.</p>
+            </header>
+            
+            <div class="highlights-grid" style="gap: 3rem; margin-bottom: 5rem;">
+                <div class="highlight-card fade-up delay-1" style="padding: 2.5rem; border-radius: var(--radius-lg); background: var(--gradient-card); border: 1px solid var(--border-purple);">
+                    <i class="fas fa-shipping-fast highlight-icon" style="font-size: 2.5rem;"></i>
+                    <h3 class="highlight-title" style="font-size: 1.4rem; margin-bottom: 1.2rem;">4-6 Days Express Delivery</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.8;">Lightning-fast worldwide shipping with full tracking. While others take weeks, we deliver your luxury pieces in less than a week with premium courier services.</p>
+                    <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-purple);">
+                        <span style="color: var(--accent-gold); font-weight: 600; font-size: 0.9rem;">✓ Fully Insured</span>
+                        <span style="color: var(--accent-gold); font-weight: 600; font-size: 0.9rem; margin-left: 1.5rem;">✓ Real-Time Tracking</span>
+                    </div>
+                </div>
+                
+                <div class="highlight-card fade-up delay-2" style="padding: 2.5rem; border-radius: var(--radius-lg); background: var(--gradient-card); border: 1px solid var(--border-purple);">
+                    <i class="fas fa-undo-alt highlight-icon" style="font-size: 2.5rem;"></i>
+                    <h3 class="highlight-title" style="font-size: 1.4rem; margin-bottom: 1.2rem;">Hassle-Free Returns</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.8;">Not satisfied? We offer a transparent 14-day return policy with full refunds. Your satisfaction is our guarantee—no questions asked, no hidden fees.</p>
+                    <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-purple);">
+                        <span style="color: var(--accent-gold); font-weight: 600; font-size: 0.9rem;">✓ 14-Day Returns</span>
+                        <span style="color: var(--accent-gold); font-weight: 600; font-size: 0.9rem; margin-left: 1.5rem;">✓ Full Refund</span>
+                    </div>
+                </div>
+                
+                <div class="highlight-card fade-up delay-3" style="padding: 2.5rem; border-radius: var(--radius-lg); background: var(--gradient-card); border: 1px solid var(--border-purple);">
+                    <i class="fas fa-gem highlight-icon" style="font-size: 2.5rem;"></i>
+                    <h3 class="highlight-title" style="font-size: 1.4rem; margin-bottom: 1.2rem;">Authentic Materials</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.8;">We use the exact same premium materials as the originals—genuine Italian leather, Swiss hardware, and luxury fabrics. Indistinguishable from authentic pieces.</p>
+                    <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-purple);">
+                        <span style="color: var(--accent-gold); font-weight: 600; font-size: 0.9rem;">✓ Genuine Leather</span>
+                        <span style="color: var(--accent-gold); font-weight: 600; font-size: 0.9rem; margin-left: 1.5rem;">✓ Premium Hardware</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Comparison Section -->
+            <div class="comparison-section fade-up" style="background: var(--bg-main); border: 2px solid var(--border-neon); border-radius: var(--radius-lg); padding: 4rem; margin-top: 4rem;">
+                <h3 style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Why We're Better Than Cheap Replicas</h3>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; max-width: 900px; margin: 0 auto;">
+                    <div style="text-align: center; padding: 2rem; background: var(--gradient-card); border-radius: var(--radius-md); border: 1px solid var(--border-purple);">
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #ef4444, #dc2626); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: 0 8px 25px rgba(239, 68, 68, 0.3);">
+                            <i class="fas fa-times" style="color: #ffffff; font-size: 1.8rem;"></i>
+                        </div>
+                        <h4 style="font-size: 1.3rem; margin-bottom: 1rem; color: #ef4444;">Cheap Replicas</h4>
+                        <ul style="list-style: none; text-align: left; color: var(--text-secondary); line-height: 2;">
+                            <li>❌ Synthetic materials</li>
+                            <li>❌ Poor stitching quality</li>
+                            <li>❌ Fading hardware</li>
+                            <li>❌ 2-4 weeks shipping</li>
+                            <li>❌ No returns accepted</li>
+                            <li>❌ Obvious fake appearance</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="text-align: center; padding: 2rem; background: var(--gradient-primary); border-radius: var(--radius-md); box-shadow: var(--shadow-luxury), var(--shadow-glow); position: relative;">
+                        <div style="position: absolute; top: -15px; right: -15px; background: var(--accent-gold); color: var(--bg-main); padding: 0.5rem 1rem; border-radius: var(--radius-sm); font-weight: 700; font-size: 0.8rem; box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);">PREMIUM</div>
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #10b981, #059669); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);">
+                            <i class="fas fa-check" style="color: #ffffff; font-size: 1.8rem;"></i>
+                        </div>
+                        <h4 style="font-size: 1.3rem; margin-bottom: 1rem; color: #ffffff;">LuvrenLuxe Quality</h4>
+                        <ul style="list-style: none; text-align: left; color: rgba(255,255,255,0.9); line-height: 2;">
+                            <li>✓ Genuine leather & canvas</li>
+                            <li>✓ Precision craftsmanship</li>
+                            <li>✓ Non-fading metal hardware</li>
+                            <li>✓ 4-6 days express delivery</li>
+                            <li>✓ 14-day return policy</li>
+                            <li>✓ Indistinguishable quality</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: var(--glass-purple); border-radius: var(--radius-md); border: 1px solid var(--border-purple);">
+                    <p style="font-size: 1.2rem; color: var(--text-primary); margin-bottom: 1rem;"><strong>Our Promise:</strong> Same materials, same techniques, same luxury feel as the originals.</p>
+                    <p style="color: var(--text-secondary);">We don't compromise on quality. Every piece is crafted to perfection using authentic materials that match the original specifications. Even experts can't tell the difference.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="highlights" class="highlights-section">
         <div class="container">
             <header class="section-header fade-up">
-                <span class="section-subtitle">Why Choose Us</span>
-                <h2 class="section-title">The LuvrenLuxe Difference</h2>
+                <span class="section-subtitle">Additional Benefits</span>
+                <h2 class="section-title">Complete Luxury Experience</h2>
             </header>
             <div class="highlights-grid">
                 <div class="highlight-card fade-up delay-1">
-                    <i class="fas fa-plane-departure highlight-icon"></i>
-                    <h3 class="highlight-title">Global Priority Shipping</h3>
-                    <p style="color: var(--text-secondary);">Expedited, insured delivery to your doorstep worldwide. Complimentary on qualified orders.</p>
+                    <i class="fas fa-certificate highlight-icon"></i>
+                    <h3 class="highlight-title">Quality Certification</h3>
+                    <p style="color: var(--text-secondary);">Every piece comes with detailed quality inspection reports and authenticity documentation for your peace of mind.</p>
                 </div>
                 <div class="highlight-card fade-up delay-2">
-                    <i class="fas fa-shield-alt highlight-icon"></i>
-                    <h3 class="highlight-title">Guaranteed Authenticity</h3>
-                    <p style="color: var(--text-secondary);">Every piece is rigorously inspected by our experts and comes with certification.</p>
+                    <i class="fas fa-video highlight-icon"></i>
+                    <h3 class="highlight-title">Pre-Shipment Video</h3>
+                    <p style="color: var(--text-secondary);">Receive a detailed video of your exact item before shipping. Approve every detail before we send it to you.</p>
                 </div>
                 <div class="highlight-card fade-up delay-3">
-                    <i class="fas fa-concierge-bell highlight-icon"></i>
-                    <h3 class="highlight-title">Private Concierge</h3>
-                    <p style="color: var(--text-secondary);">Dedicated support specialists available to assist with styling and inquiries.</p>
+                    <i class="fas fa-headset highlight-icon"></i>
+                    <h3 class="highlight-title">24/7 Concierge Support</h3>
+                    <p style="color: var(--text-secondary);">Dedicated luxury specialists available around the clock to assist with orders, styling advice, and any inquiries.</p>
                 </div>
             </div>
         </div>
@@ -1144,13 +2106,10 @@
                 <div class="story-content fade-up">
                     <span class="section-subtitle" style="text-align: left; display: inline-block;">Our Heritage</span>
                     <h2>A Decade of<br>Uncompromising Quality</h2>
-                    <p>LuvrenLuxe.store offers premium replica handbags, shoes, and accessories crafted from genuine leather and canvas.
-We collaborate with trusted factories to ensure superior craftsmanship and elegant designs in every piece.</p>
-                    <p>Each handbag features durable, non-fading metal hardware and natural, vegetable-tanned vachetta cowhide leather that develops a rich patina over time.
-Our replicas mirror the originals in every detail, from lining to clasps and labels.
-We guarantee competitive prices, fast door-to-door shipping, and responsive customer service.
-Shop confidently knowing all product images accurately represent the real items.</p>
-                    <a href="#contact" class="btn btn-primary" style="margin-top: 1rem;">Connect With Us</a>
+                    <p>Since 2010, LuvrenLuxe has been the premier destination for luxury replica enthusiasts who refuse to compromise on quality. We source only the finest materials—genuine Italian leather, Swiss-grade hardware, and premium fabrics—to create pieces that are virtually indistinguishable from their authentic counterparts.</p>
+                    <p>Our master craftsmen use the same techniques employed by luxury fashion houses. Each piece undergoes rigorous quality control, ensuring perfect stitching, flawless alignment, and authentic weight and feel. From the vegetable-tanned vachetta leather that develops a beautiful patina to the non-fading metal hardware, every detail is meticulously crafted.</p>
+                    <p>We've built our reputation on three pillars: <strong>Uncompromising Quality</strong>, <strong>Lightning-Fast Delivery</strong>, and <strong>Transparent Service</strong>. With express 4-6 day shipping, hassle-free returns, and pre-shipment video verification, we've redefined what it means to shop for luxury replicas online.</p>
+                    <a href="#contact" class="btn btn-trust" style="margin-top: 1rem;">Connect With Us</a>
                 </div>
                 <div class="story-image-wrapper fade-up delay-2">
                     <div class="story-placeholder">
@@ -1187,7 +2146,7 @@ Shop confidently knowing all product images accurately represent the real items.
                         <span>LuvrenLuxe</span>
                     </a>
                     <p style="color: var(--text-secondary); max-width: 300px; margin-bottom: 2rem;">
-                        Redefining the digital luxury experience through curation, authenticity, and exceptional service.
+                        Premium 1:1 replicas with authentic materials. Fast 4-6 day delivery, hassle-free returns, and uncompromising quality since 2010.
                     </p>
                     <div class="social-links">
                         <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
@@ -1236,10 +2195,13 @@ Shop confidently knowing all product images accurately represent the real items.
     </footer>
 
     <div class="contact-bar">
+        <a href="tel:+971558132128" class="contact-orb phone" data-tooltip="Call Now">
+            <i class="fas fa-phone"></i>
+        </a>
         <a href="https://wa.me/971558132128" target="_blank" class="contact-orb whatsapp" data-tooltip="WhatsApp Concierge">
             <i class="fab fa-whatsapp"></i>
         </a>
-        <a href="mailto:moderntotehub@gmail.com" class="contact-orb email" data-tooltip="Email Us">
+        <a href="mailto:luvrenluxe@gmail.com" class="contact-orb email" data-tooltip="Email Us">
             <i class="far fa-envelope"></i>
         </a>
     </div>
@@ -1289,14 +2251,55 @@ Shop confidently knowing all product images accurately represent the real items.
         </div>
     </div>
 
-    <!-- NEW: Purchase Notification Bubble HTML -->
+    <!-- Enhanced Purchase Notification Bubble -->
     <div class="purchase-notification" id="purchaseNotification">
+        <button class="close-purchase" onclick="closePurchaseNotification()">&times;</button>
         <div class="icon-bubble">
             <i class="fas fa-check"></i>
         </div>
         <p id="notificationText">
             Someone just bought an item!
         </p>
+    </div>
+    
+    <!-- Live Visitor Counter -->
+    <div class="visitor-counter" id="visitorCounter">
+        <div class="visitor-display">
+            <i class="fas fa-eye"></i>
+            <span class="visitor-count" id="visitorCount">87</span>
+        </div>
+    </div>
+    
+    <!-- Welcome Popup -->
+    <div class="welcome-popup" id="welcomePopup">
+        <div class="welcome-content">
+            <div class="welcome-icon">
+                <i class="fas fa-crown"></i>
+            </div>
+            <h2 class="welcome-title">Welcome to LuvrenLuxe!</h2>
+            <p class="welcome-text">Thank you for visiting our exclusive luxury collection. Discover premium 1:1 replicas crafted with authentic materials and delivered with exceptional service.</p>
+            
+            <div class="welcome-benefits">
+                <div class="welcome-benefit">
+                    <i class="fas fa-shipping-fast"></i>
+                    <span>4-6 Days Delivery</span>
+                </div>
+                <div class="welcome-benefit">
+                    <i class="fas fa-undo"></i>
+                    <span>Easy Returns</span>
+                </div>
+                <div class="welcome-benefit">
+                    <i class="fas fa-gem"></i>
+                    <span>Authentic Materials</span>
+                </div>
+                <div class="welcome-benefit">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Quality Guaranteed</span>
+                </div>
+            </div>
+            
+            <button class="welcome-close" onclick="closeWelcome()">Start Exploring</button>
+        </div>
     </div>
 
     <script>
@@ -1426,111 +2429,167 @@ Shop confidently knowing all product images accurately represent the real items.
             });
         }
 
-        // --- PURCHASE NOTIFICATION SCRIPT (Bottom Left) ---
+        // --- OPTIMIZED NOTIFICATION & VISITOR SYSTEM ---
         (function() {
-            const names = ["Sophie", "Marie", "Léa", "Chloé", "Emma", "Manon", "Camille", "Julia", "Alice", "Elena", "Sofia", "Isabella", "Mia", "Olivia", "Hannah", "Lena", "Anna"];
+            const names = ["Sophie", "Marco", "Emma", "Luca", "Marie", "Antonio", "Camille", "Amelie", "Matteo", "Clara"];
+            const items = ["Hermès Bag", "Rolex Watch", "LV Handbag", "Chanel Flap", "Gucci Belt", "Prada Wallet"];
             const notificationBubble = document.getElementById('purchaseNotification');
             const notificationText = document.getElementById('notificationText');
+            const visitorCounter = document.getElementById('visitorCounter');
+            const visitorCount = document.getElementById('visitorCount');
 
-            if (!notificationBubble || !notificationText) return;
+            let currentVisitors = 87;
+            let isUpdating = false;
 
             function getRandom(min, max) {
                 return Math.floor(Math.random() * (max - min + 1)) + min;
             }
 
-            function showRandomPurchase() {
-                const randomName = names[getRandom(0, names.length - 1)];
-                const randomPrice = getRandom(300, 800);
+            function updateVisitorCount() {
+                if (isUpdating) return;
+                isUpdating = true;
+                
+                const change = getRandom(-3, 5);
+                currentVisitors += change;
+                
+                if (currentVisitors < 70) currentVisitors = 70;
+                if (currentVisitors > 120) currentVisitors = 120;
+                
+                visitorCount.classList.add('updating');
+                visitorCount.textContent = currentVisitors;
+                
+                setTimeout(() => {
+                    visitorCount.classList.remove('updating');
+                    isUpdating = false;
+                }, 300);
+            }
 
-                notificationText.innerHTML = `<span style="color: #a478d1; font-weight: 600;">${randomName}</span> just bought an item for <span style="color: #a478d1; font-weight: 600;">$${randomPrice}</span>`;
+            function showPurchase() {
+                const name = names[getRandom(0, names.length - 1)];
+                const item = items[getRandom(0, items.length - 1)];
+                const price = getRandom(299, 899);
 
+                notificationText.innerHTML = `<span class="purple-text">${name}</span> bought ${item} for <span class="purple-text">$${price}</span>`;
                 notificationBubble.classList.add('show');
 
-                setTimeout(() => {
-                    notificationBubble.classList.remove('show');
-                }, 5000);
+                setTimeout(() => notificationBubble.classList.remove('show'), 4000);
             }
 
-            function scheduleNextNotification() {
-                const randomDelay = getRandom(8000, 12000); 
-
+            function scheduleNext() {
                 setTimeout(() => {
-                    showRandomPurchase();
-                    scheduleNextNotification();
-                }, randomDelay);
+                    showPurchase();
+                    scheduleNext();
+                }, getRandom(8000, 15000));
             }
 
-            setTimeout(scheduleNextNotification, 15000);
+            // Show visitor counter after 3 seconds
+            setTimeout(() => {
+                if (visitorCounter) visitorCounter.classList.add('show');
+            }, 3000);
+
+            // Update visitor count every 8-15 seconds
+            setInterval(updateVisitorCount, getRandom(8000, 15000));
+
+            setTimeout(scheduleNext, 12000);
         })();
+        
+        // Optimized functions
+        function closePurchaseNotification() {
+            const notif = document.getElementById('purchaseNotification');
+            if (notif) notif.classList.remove('show');
+        }
+        
+        let ticking = false;
+        function updateHeader() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            ticking = false;
+        }
+        
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(updateHeader);
+                ticking = true;
+            }
+        });
     </script>
 </body>
     <script>
-        // Enhanced Notification System with 10% Off
-        const euNames = ['Alessandro', 'Sophie', 'Marco', 'Isabella', 'Pierre', 'Emma', 'Luca', 'Marie', 'Antonio', 'Camille', 'Giovanni', 'Amelie', 'Francesco', 'Chloe', 'Matteo', 'Lea', 'Lorenzo', 'Manon', 'Gabriele', 'Clara', 'Lucia', 'Fabio', 'Elena', 'Mattia', 'Giulia', 'Davide', 'Chiara', 'Simone', 'Francesca', 'Andrea'];
-        const luxuryItems = ['Louis Vuitton Sneakers', 'Gucci Loafers', 'Prada Handbag', 'Chanel Perfume', 'Hermes Scarf', 'Versace Sunglasses', 'Balenciaga Shoes', 'Dior Lipstick', 'Fendi Wallet', 'Armani Watch', 'Bottega Veneta Bag', 'Saint Laurent Heels', 'Cartier Bracelet', 'Burberry Coat', 'Givenchy Dress', 'Rolex Watch', 'Tiffany Necklace', 'Moncler Jacket', 'Valentino Shoes', 'Tom Ford Sunglasses', 'Celine Bag', 'Louboutin Heels', 'Bulgari Ring', 'Dolce & Gabbana Belt', 'Off-White Sneakers', 'Balmain Blazer', 'Chanel Earrings', 'Hermès Belt', 'Gucci Watch', 'Prada Shoes'];
+        // Optimized Top Notification System
+        const names = ['Sophie', 'Marco', 'Emma', 'Luca', 'Marie', 'Clara', 'Antonio', 'Amelie'];
+        const items = ['Luxury Watch', 'Designer Bag', 'Premium Belt', 'Elegant Wallet'];
         
-        let isNotificationActive = false;
-        let todayCustomerCount = 127;
+        let isTopActive = false;
+        let todayCount = 127;
 
-        function getRandomNumber(min, max) {
+        function getRand(min, max) {
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
 
-        function updateTodayCustomers() {
-            todayCustomerCount += getRandomNumber(1, 3);
-            document.getElementById('todayCustomers').textContent = todayCustomerCount;
+        function updateCount() {
+            todayCount += getRand(1, 3);
+            const el = document.getElementById('todayCustomers');
+            if (el) el.textContent = todayCount;
         }
 
-        function showNotification() {
-            if (isNotificationActive) return;
+        function showTop() {
+            if (isTopActive) return;
+            isTopActive = true;
             
-            isNotificationActive = true;
-            const notificationType = Math.random();
-            let notificationText, icon;
+            const type = Math.random();
+            let text, icon;
 
-            if (notificationType < 0.3) {
-                // 10% off notification for new customers
-                const name = euNames[Math.floor(Math.random() * euNames.length)];
-                notificationText = `<span class="purple-text">${name}</span> just claimed 10% OFF for next 24 hours!`;
+            if (type < 0.3) {
+                const name = names[getRand(0, names.length - 1)];
+                text = `<span class="purple-text">${name}</span> claimed <strong>10% OFF</strong>`;
                 icon = 'fas fa-percent';
-            } else if (notificationType < 0.6) {
-                // Visitor count notification
-                const visitorCount = getRandomNumber(90, 130);
-                notificationText = `${visitorCount} people currently exploring catalog`;
+            } else if (type < 0.6) {
+                text = `<strong>${getRand(80, 150)}</strong> people browsing now`;
                 icon = 'fas fa-users';
             } else {
-                // Purchase notification
-                const name = euNames[Math.floor(Math.random() * euNames.length)];
-                const item = luxuryItems[Math.floor(Math.random() * luxuryItems.length)];
-                const price = getRandomNumber(300, 700);
-                notificationText = `<span class="purple-text">${name}</span> just bought ${item} for <span class="purple-text">$${price}</span>`;
-                icon = 'fas fa-shopping-bag';
-                updateTodayCustomers();
+                const name = names[getRand(0, names.length - 1)];
+                const item = items[getRand(0, items.length - 1)];
+                text = `<span class="purple-text">${name}</span> bought ${item}`;
+                icon = 'fas fa-check';
+                updateCount();
             }
 
-            const notification = document.createElement('div');
-            notification.className = 'notification';
-            notification.innerHTML = `<i class="${icon} icon"></i>${notificationText}`;
+            const notif = document.createElement('div');
+            notif.className = 'notification';
+            notif.innerHTML = `<button class="close-btn" onclick="closeTop(this)">&times;</button><i class="${icon} icon"></i>${text}`;
             
-            document.body.appendChild(notification);
-            
-            setTimeout(() => notification.classList.add('show'), 100);
+            document.body.appendChild(notif);
+            setTimeout(() => notif.classList.add('show'), 100);
             
             setTimeout(() => {
-                notification.classList.remove('show');
-                setTimeout(() => {
-                    document.body.removeChild(notification);
-                    isNotificationActive = false;
-                }, 300);
+                if (notif.parentNode) {
+                    notif.classList.remove('show');
+                    setTimeout(() => {
+                        if (notif.parentNode) document.body.removeChild(notif);
+                        isTopActive = false;
+                    }, 400);
+                }
             }, 4000);
         }
 
-        function scheduleNextNotification() {
-            const delay = getRandomNumber(6000, 10000);
+        function closeTop(btn) {
+            const notif = btn.parentElement;
+            notif.classList.remove('show');
             setTimeout(() => {
-                showNotification();
-                scheduleNextNotification();
-            }, delay);
+                if (notif.parentNode) document.body.removeChild(notif);
+                isTopActive = false;
+            }, 300);
+        }
+
+        function scheduleTop() {
+            setTimeout(() => {
+                showTop();
+                scheduleTop();
+            }, getRand(10000, 18000));
         }
 
         // Countdown Timer
@@ -1556,14 +2615,35 @@ Shop confidently knowing all product images accurately represent the real items.
             updateCountdown();
         }
 
-        // Start systems when page loads
+        // Welcome Popup System
+        function closeWelcome() {
+            const popup = document.getElementById('welcomePopup');
+            if (popup) {
+                popup.classList.remove('show');
+                sessionStorage.setItem('welcomeShown', 'true');
+            }
+        }
+        
+        function showWelcome() {
+            const hasVisited = sessionStorage.getItem('welcomeShown');
+            if (!hasVisited) {
+                const popup = document.getElementById('welcomePopup');
+                if (popup) {
+                    setTimeout(() => {
+                        popup.classList.add('show');
+                    }, 1500);
+                }
+            }
+        }
+
+        // Start optimized systems
         window.addEventListener('load', () => {
             startCountdown();
-            setTimeout(scheduleNextNotification, 3000);
-            // Update customer count every 30-60 seconds
+            showWelcome();
+            setTimeout(scheduleTop, 5000);
             setInterval(() => {
-                if (Math.random() < 0.3) updateTodayCustomers();
-            }, getRandomNumber(30000, 60000));
+                if (Math.random() < 0.3) updateCount();
+            }, getRand(60000, 120000));
         });
     </script>
 </html>
